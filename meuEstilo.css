@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background-color: rgb(19,18,26);
+}
+
+
+
+@media (max-width:599px) {
+    .container{
+        width: 100%;
+        position: absolute;
+        top: 40px;
+    }
+}
+
+@media (min-width:600px) and (max-width:2000px) {
+    .container{
+        width: 600px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+.displayArea{
+    background-color: rgb(166, 166, 166);
+}
+
+.generatorDisplay{
+    background-color: transparent;
+    color: black;
+    font-size: larger;
+    border: 0;
+    outline: none;
+}
+
+.generatorDisplay::placeholder{
+    color: rgba(0, 0, 0, 0.7);
+    font-size: larger;
+}
