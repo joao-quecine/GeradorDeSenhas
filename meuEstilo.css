@@ -1,19 +1,22 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 body{
     height: 100vh;
     background-color: rgb(19,18,26);
 }
 
 
-
 @media (max-width:599px) {
     .container{
-        width: 100%;
+        width: 85%;
         position: absolute;
         top: 40px;
+        left: 50%;
+        transform: translate(-50%, 0);
     }
 }
 
@@ -28,12 +31,12 @@ body{
 }
 
 .displayArea{
-    background-color: rgb(166, 166, 166);
+    background-color: rgb(64, 64, 64);
 }
 
 .generatorDisplay{
     background-color: transparent;
-    color: black;
+    color: white;
     font-size: larger;
     border: 0;
     outline: none;
@@ -42,4 +45,72 @@ body{
 .generatorDisplay::placeholder{
     color: rgba(0, 0, 0, 0.7);
     font-size: larger;
+}
+
+#copybutton i:hover{
+    color: white !important;
+}
+
+
+#corpoGerador{
+    background-color: rgb(64, 64, 64);
+}
+
+input[type='checkbox']{
+    display: none;
+}
+
+.checkbox {
+    display: flex; 
+    align-items: center;  
+    padding: 10px; 
+  }
+
+.checkbox .checkboxLabel{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #80ff80;
+    cursor: pointer;
+}
+
+.svgLabel{
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.checkbox-text {
+    margin-left: 5px;
+    font-size: larger;
+    line-height: 1; 
+  }
+
+input[type='checkbox']:checked~.checkboxLabel{
+    background-color: #80ff80;
+    display: flex;
+    align-items: center;
+}
+
+input[type='checkbox']:checked~.checkboxLabel .svgLabel{
+    visibility: visible;
+}
+
+.barraNivel{
+    display: inline-block;
+    width: 10px;
+    height: 30px;
+    border: 1px solid white;
+}
+
+.generateButton{
+    border:1px solid #80ff80 !important;
+    background-color: #80ff80;
+    color: black;
+    border-radius: 0%;
+}
+
+.generateButton:hover{
+    border:1px solid #80ff80;
+    background-color: transparent;
+    color: #80ff80;
 }

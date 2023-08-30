@@ -16,16 +16,80 @@
 </head>
 <body>
     <div class="container">
+
+        <!--parte superior do gerador-->
         <div class="row mb-4">
             <div class="col-12">
-                <h1 class="h5 text-center text-white">Password Generator</h1>
+                <h1 class="h4 text-center text-white">Password Generator</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 p-3 displayArea">
-                <input class="generatorDisplay w-75" type="text" value="" placeholder="P4$5W0rD" aria-label="Disabled input example" disabled readonly>
+        <div class="row mb-4 displayArea">
+            <div class="col-8 p-3 ">
+                <input class="generatorDisplay w-100" type="text" value="" placeholder="P4$5W0rD" aria-label="Disabled input example" disabled readonly>
+            </div>
+            <div class="col-4">
+                <button class="btn p-3 float-end" id="copybutton"><i class="fa-regular fa-copy fa-2xl" style="color: #80ff80;"></i></button>
             </div>
         </div>
+
+        <!--corpo do gerdor de senhas-->
+            <div class="row d-flex justify-content-center p-3" id=corpoGerador>
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <span class="text-white fs-4">Character Length</span> <span class="float-end fs-3" id="numeroRange" style="color: #80ff80;">0</span>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <input min="5" max="24" value="5" type="range" class="form-range" id="customRange1">   
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <form>
+                            <div class="checkbox mb-1">
+                                <input type="checkbox" id="uppercase">
+                                <label class="checkboxLabel" for="uppercase"><svg class="svgLabel" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#000000}</style><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg></label>
+                                <span class="checkbox-text text-white">Include Uppercase letters</span>
+                            </div>
+                            
+                            <div class="checkbox mb-1">
+                                <input type="checkbox" id="Lowercase">
+                                <label class="checkboxLabel" for="Lowercase"><svg class="svgLabel" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#000000}</style><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg></label>
+                                <span class="checkbox-text text-white">Include Lowercase Letters</span>
+                            </div>
+
+                            <div class="checkbox mb-1">
+                                <input type="checkbox" id="Numbers">
+                                <label class="checkboxLabel" for="Numbers"><svg class="svgLabel" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#000000}</style><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg></label>
+                                <span class="checkbox-text text-white">Include Numbers</span>
+                            </div>
+
+                            <div class="checkbox mb-1">
+                                <input type="checkbox" id="Symbols">
+                                <label class="checkboxLabel" for="Symbols"><svg class="svgLabel" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#000000}</style><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg></label>
+                                <span class="checkbox-text text-white">Include Symbols</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center mb-4">
+                    <div class="col-12 p-3 d-flex align-itens-center" style="background-color: rgb(38, 38, 38);">
+                        <span class="fs-5" style="color: rgb(153, 153, 153);">STRENGTH</span> 
+                        <span class="ms-auto">
+                             <span class="nivelDificuldade text-white me-4"></span>
+
+                             <span class="barraNivel"></span>
+                             <span class="barraNivel"></span>
+                             <span class="barraNivel"></span>
+                             <span class="barraNivel"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center ">
+                    <div class="col-12"><button class="btn w-100 generateButton p-3">Generate</button></div>
+                </div>
+            </div>
     </div>
 </body>
 </html>
