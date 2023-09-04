@@ -1,14 +1,13 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 
 body{
     height: 100vh;
-    background-color: rgb(19,18,26);
+     background-color: rgb(19,18,26);
 }
-
 
 @media (max-width:599px) {
     .container{
@@ -54,6 +53,20 @@ body{
 
 #corpoGerador{
     background-color: rgb(64, 64, 64);
+}
+
+.form-range::-webkit-slider-thumb{
+    background-color: #80ff80;
+    position: relative;
+    z-index: 3;
+}
+
+#range-progress-bar{
+    height: 10px;
+    background-color: #80ff80; /* Cor da barra personalizada */
+    border-radius: 5px;
+    position: absolute;
+    top: 7px;
 }
 
 input[type='checkbox']{
