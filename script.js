@@ -38,7 +38,6 @@ function calcularForca(){
     }
 
     pontosDeForca=pontosChecked+pontosRange //pode ser no maximo 10
-    console.log(pontosDeForca, pontosChecked)
     aplicarEstiloForca()
 }
 
@@ -47,6 +46,7 @@ document.querySelectorAll('#PasswordConfig input[type="checkbox"]').forEach(func
     i.addEventListener('change', function(){
         calcularForca()
         verificarCheckbox()
+        gerarSenha()
     })
 })
 
@@ -92,8 +92,41 @@ function verificarCheckbox(){
 
 
 //script gerar a senha de acordo com as configuraçoes selecionadas
-
 function gerarSenha(){
     let letrasMinusculas = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     let letrasMaiusculas = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    let numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    let simbolos = ["!","#","$","%","&","*","+",",",".","/",":",";","=","?","@",];
+
+    let upper= document.getElementById('Uppercase')
+    let lower=document.getElementById("Lowercase")
+    let number=document.getElementById("Numbers")
+    let symbol=document.getElementById("Symbols");
+    let senha=[]
+
+    if (upper.checked){
+        let index=Math.floor(Math.random()*letrasMaiusculas.length)
+        senha.push(letrasMaiusculas[index])
+    }
+
+    if (lower.checked ){
+        let index= Math.floor((Math.random() * letrasMinusculas.length))
+        senha.push(letrasMinusculas[index]);
+    }
+
+    if (number.checked ) {
+        let index= Math.floor ((Math.random () *numeros.length));
+        senha.push(numeros [index] );
+    };
+
+    if (symbol.checked){
+        let index=Math.floor(((Math.random())*(simbolos . length)));
+        senha.push(simbolos[index]);
+    };
+    console.log(senha)
+}
+
+//script embaralhar senha
+function embaralharSenha(senha){
+    
 }
