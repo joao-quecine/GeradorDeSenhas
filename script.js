@@ -46,7 +46,6 @@ document.querySelectorAll('#PasswordConfig input[type="checkbox"]').forEach(func
     i.addEventListener('change', function(){
         calcularForca()
         verificarCheckbox()
-        gerarSenha()
     })
 })
 
@@ -74,6 +73,8 @@ function aplicarEstiloForca(){
 }
 
 //script que verifica se pelo menos um checkbox esta checado
+let btn= document.getElementById('btnCriar')
+btn.onclick=gerarSenha
 function verificarCheckbox(){
     let checkbox= document.querySelectorAll('#PasswordConfig input[type="checkbox"]')
     let checkboxChecked=0
@@ -83,10 +84,10 @@ function verificarCheckbox(){
         }
     })
     if(checkboxChecked==0){
-        document.getElementById('btnCriar').setAttribute('disabled','true')
+        btn.setAttribute('disabled','true')
     }
     else{
-        document.getElementById('btnCriar').removeAttribute('disabled')
+        btn.removeAttribute('disabled')
     }
 }
 
@@ -102,28 +103,46 @@ function gerarSenha(){
     let lower=document.getElementById("Lowercase")
     let number=document.getElementById("Numbers")
     let symbol=document.getElementById("Symbols");
-    let senha=[]
+    let preSenha=[]
 
-    if (upper.checked){
-        let index=Math.floor(Math.random()*letrasMaiusculas.length)
-        senha.push(letrasMaiusculas[index])
+    //gera uma string 
+    let i=0
+    while(i<range.value){
+
+        if (upper.checked){
+            let index=Math.floor(Math.random()*letrasMaiusculas.length)
+            if (i<range.value){
+                preSenha.push(letrasMaiusculas[index])
+                ++i
+            }
+        }
+
+        if (lower.checked ){
+            let index= Math.floor((Math.random() * letrasMinusculas.length))
+            if (i<range.value){
+                preSenha.push(letrasMinusculas[index]);
+                ++i
+            }
+        }
+    
+        if (number.checked ) {
+            let index= Math.floor ((Math.random () *numeros.length));
+            if (i<range.value){
+                preSenha.push(numeros [index] );
+                ++i
+            }  
+        };
+
+        if (symbol.checked){
+            let index=Math.floor(((Math.random())*(simbolos . length)));
+            if (i<range.value){
+                preSenha.push(simbolos[index]);
+                ++i
+            }
+        };
     }
-
-    if (lower.checked ){
-        let index= Math.floor((Math.random() * letrasMinusculas.length))
-        senha.push(letrasMinusculas[index]);
-    }
-
-    if (number.checked ) {
-        let index= Math.floor ((Math.random () *numeros.length));
-        senha.push(numeros [index] );
-    };
-
-    if (symbol.checked){
-        let index=Math.floor(((Math.random())*(simbolos . length)));
-        senha.push(simbolos[index]);
-    };
-    console.log(senha)
+    
+    console.log(preSenha)
 }
 
 //script embaralhar senha
