@@ -155,4 +155,13 @@ function embaralharSenha(preSenha){
         preSenha.splice(indexdel, 1)
         preSenha.splice(indexins,0, valorDoIndex)
     }
+    let senha= preSenha
+    apresentarSenha(senha)
 }
+
+//script para apresentar a senha gerada e embaralhada no .generatorDisplay
+ function apresentarSenha(senha){
+    document.querySelector('.generatorDisplay').value=senha.join('')
+ }
+    
+ 
