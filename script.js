@@ -105,7 +105,7 @@ function gerarSenha(){
     let symbol=document.getElementById("Symbols");
     let preSenha=[]
 
-    //gera uma string 
+    //gera uma lista com os caracteres que vao ser usados para criar a senha
     let i=0
     while(i<range.value){
 
@@ -141,11 +141,18 @@ function gerarSenha(){
             }
         };
     }
-    
-    console.log(preSenha)
+    embaralharSenha(preSenha)
 }
 
-//script embaralhar senha
-function embaralharSenha(senha){
-    
+//script embaralhar senha. pega um elemento de um indice alatorio, apaga ele e o recoloca em uma posiçao aleatoria
+function embaralharSenha(preSenha){
+    for(let i=0; i<100;i++){
+        let listaLenght= preSenha.length
+        let indexdel= Math.floor(Math.random()*listaLenght)
+        let indexins= Math.floor(Math.random()*listaLenght)
+        let valorDoIndex= preSenha[indexdel]
+
+        preSenha.splice(indexdel, 1)
+        preSenha.splice(indexins,0, valorDoIndex)
+    }
 }
