@@ -34,16 +34,58 @@ function calcularForca(){
         pontosRange=2
     }
     else{
-        pontosRange=1
+        pontosRange=1.25
     }
 
     pontosDeForca=pontosChecked+pontosRange //pode ser no maximo 10
     console.log(pontosDeForca, pontosChecked)
+    aplicarEstiloForca()
 }
 
 //script atualizar pontos de força ao alterar o valor do formulario de configuração
 document.querySelectorAll('#PasswordConfig input[type="checkbox"]').forEach(function(i){
     i.addEventListener('change', function(){
         calcularForca()
+        verificarCheckbox()
     })
 })
+
+//script aplicar estilos á barra de nível a depender dos pontos de força
+let nivelDificuldadeText= document.querySelector('.nivelDificuldade')
+
+function aplicarEstiloForca(){
+    let areaBarrasDeNivel= document.getElementById('areaBarrasDeNivel')
+    if (pontosDeForca<=2.5){
+        areaBarrasDeNivel.setAttribute('nivel','1')
+        nivelDificuldadeText.textContent='Very weak'
+    }
+    else if(pontosDeForca<=5){
+        areaBarrasDeNivel.setAttribute('nivel','2')
+        nivelDificuldadeText.textContent='weak'
+    }
+    else if(pontosDeForca<=7.5){
+        areaBarrasDeNivel.setAttribute('nivel','3')
+        nivelDificuldadeText.textContent='Strong'
+    }
+    else{
+        areaBarrasDeNivel.setAttribute('nivel','4')
+        nivelDificuldadeText.textContent='Very Strong'
+    }
+}
+
+//script que verifica se pelo menos um checkbox esta checado
+function verificarCheckbox(){
+    let checkbox= document.querySelectorAll('#PasswordConfig input[type="checkbox"]')
+    let checkboxChecked=0
+    checkbox.forEach(function(i){
+        if(i.checked){
+            checkboxChecked++
+        }
+    })
+    if(checkboxChecked==0){
+        document.getElementById('btnCriar').setAttribute('disabled','true')
+    }
+    else{
+        document.getElementById('btnCriar').removeAttribute('disabled')
+    }
+}

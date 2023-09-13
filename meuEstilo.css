@@ -112,6 +112,7 @@ input[type='checkbox']:checked~.checkboxLabel .svgLabel{
     display: inline-block;
     width: 10px;
     height: 30px;
+    margin: 0 2px;
     border: 1px solid white;
 }
 
@@ -128,18 +129,23 @@ input[type='checkbox']:checked~.checkboxLabel .svgLabel{
     color: #80ff80;
 }
 
-#areaBarrasDeNivel[nivel="1"] .barraNivel:nth-child(1){
+#areaBarrasDeNivel[nivel="1"] .barraNivel:nth-of-type(1){
     background-color: #F71425;
 }
 
-#areaBarrasDeNivel[nivel="2"] .barraNivel:nth-child(1), #areaBarrasDeNivel[nivel="2"] .barraNivel:nth-child(2){
+#areaBarrasDeNivel[nivel="2"] .barraNivel:nth-of-type(1), #areaBarrasDeNivel[nivel="2"] .barraNivel:nth-of-type(2){
     background-color: #F6DF16;
 }
 
-#areaBarrasDeNivel[nivel="3"] .barraNivel:nth-child(1), #areaBarrasDeNivel[nivel="3"] .barraNivel:nth-child(2),  #areaBarrasDeNivel[nivel="3"] .barraNivel:nth-child(3){
+#areaBarrasDeNivel[nivel="3"] .barraNivel:nth-of-type(1), #areaBarrasDeNivel[nivel="3"] .barraNivel:nth-of-type(2),  #areaBarrasDeNivel[nivel="3"] .barraNivel:nth-of-type(3){
     background-color: #9ae59a;
 }
 
-#areaBarrasDeNivel[nivel="4"] .barraNivel:nth-child(1), #areaBarrasDeNivel[nivel="4"] .barraNivel:nth-child(2),  #areaBarrasDeNivel[nivel="4"] .barraNivel:nth-child(3), #areaBarrasDeNivel[nivel="4"] .barraNivel:nth-child(4){
+#areaBarrasDeNivel[nivel="4"] .barraNivel:nth-of-type(1), #areaBarrasDeNivel[nivel="4"] .barraNivel:nth-of-type(2),  #areaBarrasDeNivel[nivel="4"] .barraNivel:nth-of-type(3), #areaBarrasDeNivel[nivel="4"] .barraNivel:nth-of-type(4){
     background-color: #80ff80;
+}
+
+.nivelDificuldade{
+    font-size: larger;
+    text-transform: uppercase;
 }
