@@ -127,3 +127,19 @@ input[type='checkbox']:checked~.checkboxLabel .svgLabel{
     background-color: transparent;
     color: #80ff80;
 }
+
+#areaBarrasDeNivel[nivel="1"] .barraNivel:nth-child(1){
+    background-color: #F71425;
+}
+
+#areaBarrasDeNivel[nivel="2"] .barraNivel:nth-child(1), #areaBarrasDeNivel[nivel="2"] .barraNivel:nth-child(2){
+    background-color: #F6DF16;
+}
+
+#areaBarrasDeNivel[nivel="3"] .barraNivel:nth-child(1), #areaBarrasDeNivel[nivel="3"] .barraNivel:nth-child(2),  #areaBarrasDeNivel[nivel="3"] .barraNivel:nth-child(3){
+    background-color: #9ae59a;
+}
+
+#areaBarrasDeNivel[nivel="4"] .barraNivel:nth-child(1), #areaBarrasDeNivel[nivel="4"] .barraNivel:nth-child(2),  #areaBarrasDeNivel[nivel="4"] .barraNivel:nth-child(3), #areaBarrasDeNivel[nivel="4"] .barraNivel:nth-child(4){
+    background-color: #80ff80;
+}
