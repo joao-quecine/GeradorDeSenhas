@@ -6,7 +6,7 @@ document.querySelector('.form-range').addEventListener('input', function() {
     document.getElementById('numeroRange').innerHTML = this.value;
 
     //aplicando cor a esquerda do indicador do range
-    const percent = (range.value - range.min) / (range.max - range.min) * 95; //95, pois entre o range e as laterais da div pai, há um espaço
+    const percent = (range.value - range.min) / (range.max - range.min) * 100;
     rangeBar.style.width = percent + '%';
 
     calcularForca()
@@ -70,7 +70,7 @@ function aplicarEstiloForca(){
     }
     else{
         areaBarrasDeNivel.setAttribute('nivel','4')
-        nivelDificuldadeText.textContent='Very Strong'
+        nivelDificuldadeText.textContent='Stronger'
     }
 }
 

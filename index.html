@@ -24,10 +24,10 @@
             </div>
         </div>
         <div class="row mb-4 displayArea">
-            <div class="col-8 p-3 ">
+            <div class="col-9 p-3 ">
                 <input class="generatorDisplay w-100" type="text" value="" placeholder="P4$5W0rD" aria-label="Disabled input example" disabled readonly>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <button class="btn p-3 float-end" id="copybutton"><i class="fa-regular fa-copy fa-2xl" style="color: #80ff80;"></i></button>
             </div>
         </div>
@@ -45,8 +45,10 @@
                 <div class="col-12">
                     <div class="row mb-2">
                         <div class="col-12 position-relative">
-                            <input min="5" max="24" value="5" type="range" class="form-range w-100" id="customRange1">
-                            <div id="range-progress-bar"></div>
+                            <span class="position-relative d-block" style="overflow: hidden;">
+                                <input min="5" max="24" value="5" type="range" class="form-range w-100" id="customRange1">
+                                <div id="range-progress-bar"></div>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -88,7 +90,7 @@
                         <div class="col-12 p-3 d-flex align-itens-center" style="background-color: rgb(38, 38, 38);">
                             <span class="fs-5" style="color: rgb(153, 153, 153);">STRENGTH</span> 
                             <span class="ms-auto d-flex justify-content-center" id="areaBarrasDeNivel" nivel="2">
-                                <div class="nivelDificuldade text-white me-4 d-inline-block">Weak</div>
+                                <div class="nivelDificuldade text-white me-2 d-inline-block">Weak</div>
     
                                 
                                 <span class="barraNivel"></span>
