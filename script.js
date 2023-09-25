@@ -170,8 +170,15 @@ function embaralharSenha(preSenha){
 
 
  //script copy button
- document.getElementById('copybutton').onclick=copyTextToClipboard
+ document.getElementById('copybutton').onclick=function(){
+    if(document.querySelector('.generatorDisplay').value!='')
+    copyTextToClipboard()
+ }
 
+//script modal
+const myModal = new bootstrap.Modal('#MyModal', {
+    focus: false
+})
 
  //funçao de copiar para area de transferência
  function copyTextToClipboard() {
@@ -190,8 +197,7 @@ function embaralharSenha(preSenha){
       // Execute o comando de cópia para copiar o texto para a área de transferência
       const successful = document.execCommand('copy');
       if (successful) {
-        console.log('Texto copiado para a área de transferência');
-        alert('Texto copiado para a área de transferência!');
+        myModal.show()
       } 
       else {
         alert('Falha ao copiar o texto para a área de transferência.');
@@ -201,3 +207,6 @@ function embaralharSenha(preSenha){
       document.body.removeChild(tempInput);
     }
   }
+
+
+
